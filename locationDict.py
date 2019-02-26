@@ -84,7 +84,8 @@ class LocationFinder:
 		comp = ""
 		strList = str.split (address, " ")
 		comp = urllib.parse.quote (address)
-		url = "https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=AIzaSyAs04fvg1KFJYzOJeTKBQaZ-8c-KrT_t3A"%(comp)
+		key = "ADD API KEY HERE" 
+		url = "https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s"%(comp,key)
 		print (url)
 		return url
 
@@ -102,6 +103,6 @@ class LocationFinder:
 		self.makeCsv(self.newMat)
 
 if __name__ == "__main__":
-	find = LocationFinder ("JPSP1315+Authors+Institutions+FirstNames.csv","schooldict.csv")
+	find = LocationFinder ("+Authors+Institutions.csv","schooldict.csv")
 	find.findLocation()
 	find.main()
